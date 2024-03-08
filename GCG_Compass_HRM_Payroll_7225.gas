@@ -1,0 +1,1557 @@
+Program.Sub.ScreenSU.Start
+gui.Form1..create
+gui.Form1..caption("Payroll Export")
+gui.Form1..size(5100,3675)
+gui.Form1..minx(0)
+gui.Form1..miny(0)
+gui.Form1..position(0,0)
+gui.Form1..event(unload,form1_unload)
+gui.Form1..alwaysontop(False)
+gui.Form1..fontname("Arial")
+gui.Form1..fontsize(8)
+gui.Form1..forecolor(0)
+gui.Form1..fontstyle(,,,,)
+gui.Form1..BackColor(-2147483633)
+gui.Form1..controlbox(True)
+gui.Form1..maxbutton(False)
+gui.Form1..minbutton(False)
+gui.Form1..mousepointer(0)
+gui.Form1..moveable(True)
+gui.Form1..sizeable(False)
+gui.Form1..ShowInTaskBar(True)
+gui.Form1..titlebar(True)
+gui.Form1.lblBegDate.create(label,"Beginning Date",True,1935,255,1,200,1565,True,0,Arial,8,-2147483633,0)
+gui.Form1.lblBegDate.defaultvalue("")
+gui.Form1.lblBegDate.controlgroup(0)
+gui.Form1.lblEndingDate.create(label,"Ending Date",True,1935,255,1,2100,1595,True,0,Arial,8,-2147483633,0)
+gui.Form1.lblEndingDate.defaultvalue("")
+gui.Form1.lblEndingDate.controlgroup(0)
+gui.Form1.dpbegdate.create(datepicker)
+gui.Form1.dpbegdate.visible(True)
+gui.Form1.dpbegdate.size(1380,285)
+gui.Form1.dpbegdate.zorder(0)
+gui.Form1.dpbegdate.position(200,1890)
+gui.Form1.dpbegdate.enabled(True)
+gui.Form1.dpbegdate.checkbox(False)
+gui.Form1.dpbegdate.defaultvalue("")
+gui.Form1.dpbegdate.controlgroup(0)
+gui.Form1.dpendingdate.create(datepicker)
+gui.Form1.dpendingdate.visible(True)
+gui.Form1.dpendingdate.size(1380,285)
+gui.Form1.dpendingdate.zorder(0)
+gui.Form1.dpendingdate.position(2100,1890)
+gui.Form1.dpendingdate.enabled(True)
+gui.Form1.dpendingdate.checkbox(False)
+gui.Form1.dpendingdate.defaultvalue("")
+gui.Form1.dpendingdate.controlgroup(0)
+gui.Form1.cmdOk.create(button)
+gui.Form1.cmdOk.caption("Ok")
+gui.Form1.cmdOk.visible(True)
+gui.Form1.cmdOk.size(855,375)
+gui.Form1.cmdOk.zorder(0)
+gui.Form1.cmdOk.position(200,2530)
+gui.Form1.cmdOk.enabled(True)
+gui.Form1.cmdOk.fontname("Arial")
+gui.Form1.cmdOk.fontsize(8)
+gui.Form1.cmdOk.event(click,cmdok_click)
+gui.Form1.cmdOk.defaultvalue("")
+gui.Form1.cmdOk.controlgroup(0)
+gui.Form1.lblBegEmp.create(label,"Beginning Employee",True,1935,255,1,200,200,True,0,Arial,8,-2147483633,0)
+gui.Form1.lblBegEmp.defaultvalue("")
+gui.Form1.lblBegEmp.controlgroup(0)
+gui.Form1.lblEndEmp.create(label,"Ending Employee",True,1935,255,1,2625,200,True,0,Arial,8,-2147483633,0)
+gui.Form1.lblEndEmp.defaultvalue("")
+gui.Form1.lblEndEmp.controlgroup(0)
+gui.Form1.cmdBegEmpBrwse.create(button)
+gui.Form1.cmdBegEmpBrwse.caption("^")
+gui.Form1.cmdBegEmpBrwse.visible(True)
+gui.Form1.cmdBegEmpBrwse.size(500,300)
+gui.Form1.cmdBegEmpBrwse.zorder(0)
+gui.Form1.cmdBegEmpBrwse.position(1825,530)
+gui.Form1.cmdBegEmpBrwse.enabled(True)
+gui.Form1.cmdBegEmpBrwse.fontname("Arial")
+gui.Form1.cmdBegEmpBrwse.fontsize(8)
+gui.Form1.cmdBegEmpBrwse.event(click,cmdbegempbrwse_click)
+gui.Form1.cmdBegEmpBrwse.defaultvalue("")
+gui.Form1.cmdBegEmpBrwse.controlgroup(0)
+gui.Form1.cmdEndEmpBrws.create(button)
+gui.Form1.cmdEndEmpBrws.caption("^")
+gui.Form1.cmdEndEmpBrws.visible(True)
+gui.Form1.cmdEndEmpBrws.size(500,300)
+gui.Form1.cmdEndEmpBrws.zorder(0)
+gui.Form1.cmdEndEmpBrws.position(4195,530)
+gui.Form1.cmdEndEmpBrws.enabled(True)
+gui.Form1.cmdEndEmpBrws.fontname("Arial")
+gui.Form1.cmdEndEmpBrws.fontsize(8)
+gui.Form1.cmdEndEmpBrws.event(click,cmdendempbrws_click)
+gui.Form1.cmdEndEmpBrws.defaultvalue("")
+gui.Form1.cmdEndEmpBrws.controlgroup(0)
+gui.Form1.txtBegEmp.create(textbox,"",True,1485,300,0,200,530,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtBegEmp.defaultvalue("")
+gui.Form1.txtBegEmp.controlgroup(0)
+gui.Form1.chkAllEmp.create(checkbox)
+gui.Form1.chkAllEmp.caption("All Employees")
+gui.Form1.chkAllEmp.visible(True)
+gui.Form1.chkAllEmp.size(1935,255)
+gui.Form1.chkAllEmp.zorder(0)
+gui.Form1.chkAllEmp.position(200,1050)
+gui.Form1.chkAllEmp.enabled(True)
+gui.Form1.chkAllEmp.alignment(0)
+gui.Form1.chkAllEmp.fontname("Arial")
+gui.Form1.chkAllEmp.fontsize(8)
+gui.Form1.chkAllEmp.event(click,chkallemp_click)
+gui.Form1.chkAllEmp.defaultvalue("")
+gui.Form1.chkAllEmp.controlgroup(0)
+gui.Form1.txtendemp.create(textbox,"",True,1485,300,0,2595,530,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtendemp.defaultvalue("")
+gui.Form1.txtendemp.controlgroup(0)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.UDT.uJD.Define("EMPL",String,EMPL)
+Variable.UDT.uJD.Define("HOURS_WORKED",Float,HOURS_WORKED)
+Variable.UDT.uJD.Define("RATE_EMPLOYEE",Float)
+Variable.UDT.uJD.Define("CHARGE_DATE",Date,CHARGE_DATE)
+Variable.UDT.uJD.Define("SUM_HOURS",Float)
+Variable.UDT.uJD.Define("EARNINGS_CODE",String,EARNINGS_CODE)
+Variable.uGlobal.uJD.Declare("uJD")
+Variable.Global.fHoursCount.Declare(Float,0)
+Variable.UDT.uCompare.Define("HOURS_WORKED",Float,HOURS_WORKED)
+Variable.UDT.uCompare.Define("EARNINGS_CODE",String,EARNINGS_CODE)
+Variable.UDT.uCompare.Define("CHARGE_DATE",String,CHARGE_DATE)
+Variable.uGlobal.uCompare.Declare("uCompare")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'This is a custom payroll export for Hahn & Clay
+'Coded by: WAW
+
+'open connection
+F.odbc.Connection!con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass,72000)
+
+'make the form visible
+Gui.Form1..Visible(true)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_Compass_HRM_Payroll_7225.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Main.End
+
+program.sub.form1_unload.start
+F.Intrinsic.Control.SetErrorHandler("form1_unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'close connection to the database
+F.ODBC.Connection!con.Close
+
+'end the program
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("form1_unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_Compass_HRM_Payroll_7225.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.form1_unload.end
+
+program.sub.cmdok_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdok_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sfiledir.Declare(String)
+V.Local.sfilename.Declare(String)
+V.Local.sbegdate.Declare(String)
+V.Local.senddate.Declare(String)
+V.Local.ssql.Declare(String)
+V.Local.shours.Declare(String)
+V.Local.smins.Declare(String)
+V.Local.i.Declare(Long)
+V.Local.i2.Declare(Long)
+V.Local.skey.Declare(String)
+V.Local.sss.Declare(String)
+V.Local.sdept.Declare(String)
+V.Local.sfileline.Declare(String)
+V.Local.sfilefinal.Declare(String)
+V.Local.spaycode.Declare(String)
+V.Local.sjbhours.Declare(String)
+V.Local.ssql2.Declare(String)
+V.Local.ssql3.Declare(String)
+V.Local.sec.Declare(String)
+V.Local.sdesc.Declare(String)
+V.Local.ffinalhours.Declare(String)
+V.Local.sfilename2.Declare(String)
+V.Local.bfileexists.Declare(Boolean)
+V.Local.sformattedbegdate.Declare(String)
+V.Local.sformattedenddate.Declare(String)
+V.Local.scopyline.Declare(String)
+V.Local.fhoursworkedcalc.Declare(String)
+V.Local.sothours.Declare(String)
+V.Local.spayrate.Declare(String)
+V.Local.spayratessql.Declare(String)
+V.Local.stempline.Declare(String)
+V.Local.fmultrate.Declare(Float)
+V.Local.sdifferentialsql.Declare(String)
+V.Local.fdiff.Declare(Float,0)
+V.Local.fpayrate.Declare(Float)
+V.Local.bhours.Declare(Boolean)
+V.Local.inewloop.Declare(Long)
+V.Local.fsumhours.Declare(Float)
+V.Local.iord.Declare(Long)
+V.Local.sreturn.Declare(String)
+V.Local.fjbhours.Declare(Float)
+V.Local.ihoursloop.Declare(Long)
+V.Local.semp.Declare(String)
+V.Local.bover40.Declare(Boolean)
+V.Local.fdiff2.Declare(Float,0)
+V.Local.sdiff2.Declare(String)
+V.Local.sreturn2.Declare(String)
+V.Local.icompare.Declare(Long)
+V.Local.iord2.Declare(Long)
+V.Local.sreturncheck.Declare(String)
+V.Local.sdiff.Declare(String)
+V.Local.icompareubound.declare(Long)
+V.Local.icombinedloop.Declare(Long)
+V.Local.f6total.Declare(Float)
+V.Local.f1total.Declare(Float)
+V.Local.fremaining.Declare(Float)
+V.Local.f12total.Declare(Float)
+V.Local.f11total.Declare(Float)
+V.Local.fhoursleft.Declare(Float)
+V.Local.i2ubound.Declare(Long)
+V.Local.fsumbefore.Declare(Float)
+V.Local.ii.Declare(Long)
+V.Local.isumloop.Declare(Long)
+V.Local.sordinal.declare(String)
+V.Local.bover40.Set(False)
+V.Local.skey.Set("S")
+V.Local.ireturn.Declare(Long)
+V.Local.ireturn2.Declare(Long)
+V.Local.fdiffremain.Declare(Float,0)
+V.Local.fdiff2remain.Declare(Float,0)
+V.Local.sdiffremain.declare(String)
+V.Local.icompareubound2.Declare(Long)
+V.Local.icompareuboundfinal.Declare(Long)
+V.Local.fdiffover40.Declare(Float,0)
+V.Local.fdiff2over40.Declare(Float,0)
+V.Local.sdiff2remain.Declare(String)
+V.Local.bboth.Declare(Boolean)
+
+V.Local.fsum.Declare(Float,0)
+
+'set local variables as the dates selected
+V.Local.sbegdate.Set(V.Screen.Form1!dpbegdate.Value)
+V.Local.senddate.Set(V.Screen.Form1!dpendingdate.Value)
+
+'open the file dialog box allowing the user to select where and what name the file that is being created will be
+F.Intrinsic.UI.ShowSaveFileDialog("",".csv",V.Local.sfilename)
+
+'get the file name
+F.Intrinsic.File.GetFileNameFromFQN(V.Local.sfilename,V.Local.sfilename2)
+
+'check to make sure a file was selected
+F.Intrinsic.Control.If(V.Local.sfilename,=,"***CANCEL***")
+	F.Intrinsic.UI.Msgbox("No File Path Was Selected")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.InvokeWaitDialog("Generating Export Please Wait...")
+'close the form
+Gui.Form1..Visible(false)
+
+'redim
+V.uGlobal.uJD.Redim(-1,-1)
+
+'go through time attendance where lmo = L and paid = Y and employee is equal to what was selected
+F.Intrinsic.Control.If(V.Screen.Form1!chkAllEmp.Value,=,1)
+	F.Intrinsic.String.Build("Select EMPLOYEE as EMPL, EARNINGS_CODE, CHARGE_DATE, (HOURS_HH + (HOURS_MM/60)) as HOURS_WORKED from V_TIME_ATTENDANCE where REC_TYPE = '{0}' and PAID = '{1}' and CHARGE_DATE between '{2}' and '{3}'","A","Y",V.Local.sbegdate.PervasiveDate,V.Local.senddate.PervasiveDate,V.Local.ssql)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build(" Select EMPLOYEE as EMPL, EARNINGS_CODE, (HOURS_HH + (HOURS_MM/60)) as HOURS_WORKED, CHARGE_DATE  from V_TIME_ATTENDANCE where REC_TYPE = '{0}' and PAID = '{1}' and CHARGE_DATE between '{2}' and '{3}' and EMPLOYEE between '{4}' and '{5}'","A","Y",V.Local.sbegdate.PervasiveDate,V.Local.senddate.PervasiveDate,V.screen.form1!txtBegEmp.text,V.screen.form1!txtendemp.text,V.Local.ssql)
+F.Intrinsic.Control.EndIf
+F.ODBC.Connection!con.OpenRecordsetRO("rst",V.local.ssql)
+'check to see if eof is false
+F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,False)
+	'load the jd udt
+	F.intrinsic.variable.LoadUDTFromRecordset("con","rst","v.uglobal.uJD",True,1000)
+F.Intrinsic.Control.EndIf
+'close connection to the recordset
+F.ODBC.con!rst.Close
+
+'set the field reference for rate_employee
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uJD!RATE_EMPLOYEE,"RATE_EMPLOYEE")
+
+'go through JOB_DETAIL where LMO = L and CHARGE_DATE between the beginning and ending dates selected
+F.Intrinsic.Control.If(V.Screen.Form1!chkAllEmp.Value,=,1)
+	F.Intrinsic.String.Build("SELECT EMPL, EARNINGS_CODE ,SUM(HOURS_WORKED) as HOURS_WORKED,RATE_EMPLOYEE, CHARGE_DATE FROM V_JOB_DETAIL where LMO =  '{0}' and CHARGE_DATE between '{1}' and '{2}' GROUP BY EMPL, EARNINGS_CODE, RATE_EMPLOYEE, CHARGE_DATE","L",V.Local.sbegdate.pervasivedate,V.Local.senddate.PervasiveDate,V.Local.ssql)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("SELECT EMPL, EARNINGS_CODE ,SUM(HOURS_WORKED) as HOURS_WORKED,RATE_EMPLOYEE, CHARGE_DATE  FROM V_JOB_DETAIL where LMO =  '{0}' and CHARGE_DATE between '{1}' and '{2}' and EMPL between '{3}' and '{4}' GROUP BY EMPL, EARNINGS_CODE, RATE_EMPLOYEE, CHARGE_DATE","L",V.Local.sbegdate.pervasivedate,V.Local.senddate.PervasiveDate,V.screen.form1!txtBegEmp.text,V.screen.form1!txtendemp.text,V.Local.ssql)
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!con.OpenRecordsetRO("rst",V.local.ssql)
+'check to see if eof is false
+F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,False)
+	'load the jd udt
+	F.intrinsic.variable.LoadUDTFromRecordset("con","rst","v.uglobal.uJD",True,1000)
+F.Intrinsic.Control.EndIf
+'close connection to the recordset
+F.ODBC.con!rst.Close
+'
+'sort the UDT by EMPL
+F.Intrinsic.Variable.UDTMultiQuickSort(V.uglobal.ujd!EMPL,False,V.uGlobal.uJD!EMPL,False)
+
+
+
+'loop through the UDT and start building the file
+F.Intrinsic.Control.For(V.Local.i2,V.uGlobal.uJD.LBound,V.uGlobal.uJD.UBound,1)
+
+
+
+	V.Local.fdiff.Set(0)
+	V.Local.fdiff2.Set(0)
+	V.Local.bover40.Set(False)
+
+	F.Intrinsic.Control.If(V.Local.i2,>,V.uGlobal.uJD.UBound)
+		F.intrinsic.Control.Next(V.Local.i2)
+	F.Intrinsic.Control.EndIf
+
+	'check to make sure we haven't dont the employee already
+	F.Intrinsic.Control.If(V.Local.semp,=,V.uGlobal.uJD(v.local.i2)!EMPL.Trim)
+		F.Intrinsic.Control.Next(V.Local.i2)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.uGlobal.uJD(v.Local.i2)!SUM_HOURS,=,"")
+		'get the ordinals for hours for employee if sum isn't blank
+		F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uJD!EMPL,V.uGlobal.uJD(v.Local.i2)!EMPL,V.Local.sordinal)
+		F.Intrinsic.Control.If(V.Local.sordinal,<>,"")
+			F.Intrinsic.String.Split(V.Local.sordinal,"*!*",V.Local.sordinal)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.elseIf(V.uGlobal.uJD(v.Local.i2)!SUM_HOURS,=,0)
+		'get the ordinals for hours for employee if sum isn't blank
+		F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uJD!EMPL,V.uGlobal.uJD(v.Local.i2)!EMPL,V.Local.sordinal)
+		F.Intrinsic.Control.If(V.Local.sordinal,<>,"")
+				F.Intrinsic.String.Split(V.Local.sordinal,"*!*",V.Local.sordinal)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'loop through and get the sum of the hours
+	F.Intrinsic.Control.For(V.Local.isumloop,0,V.Local.sordinal.UBound,1)
+		'if equal to 0 set otherwise add
+		F.Intrinsic.Control.If(V.Local.fsum,=,0)
+			V.local.fsum.set(V.uglobal.ujd(v.local.sordinal(v.Local.isumloop))!HOURS_WORKED)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Add(V.Local.fsum,V.uGlobal.uJD(v.local.sordinal(v.Local.isumloop))!HOURS_WORKED,V.Local.fsum)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.isumloop)
+
+	'set the sum
+	V.uGlobal.uJD(v.Local.i2)!SUM_HOURS.Set(V.Local.fsum)
+
+	'see if over 40 hours
+	F.intrinsic.Control.if(V.Local.fsum,>,40)
+		V.Local.bover40.Set(True)
+	F.Intrinsic.Control.EndIf
+
+	'get the social security number and department
+	F.Intrinsic.String.Build("Select SOCIAL_SECURITY_NO, DEPT_EMPLOYEE from V_EMPLOYEE_MSTR where EMPLOYEE = '{0}'",V.uGlobal.uJD(v.Local.i2)!EMPL,V.Local.ssql)
+	F.ODBC.Connection!con.OpenRecordsetRO("rst",V.local.ssql)
+	'check to see if eof is false
+	F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,False)
+		'set ss and dept
+		V.Local.sss.Set(V.ODBC.con!rst.FieldValTrim!SOCIAL_SECURITY_NO)
+		V.Local.sdept.Set(V.ODBC.con!rst.FieldValTrim!DEPT_EMPLOYEE)
+	'otherwise set them as blanks
+	F.Intrinsic.Control.Else
+	F.Intrinsic.control.EndIf
+
+	'close the connection
+	F.ODBC.con!rst.Close
+
+	F.Intrinsic.String.Build("{0},{1}",V.Local.skey,V.Local.sss,V.Local.sfileline)
+	'put line with a space and then dept and then two blank spaces
+	F.Intrinsic.String.Build("{0},{2},{1},{2},{2}",V.Local.sfileline,V.Local.sdept,"",V.Local.sfileline)
+	V.Local.stempline.Set(V.Local.sfileline)
+
+
+	'check to see if the earnings code is 02
+	F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uJD!EMPL,V.uglobal.uJD(v.Local.i2)!EMPL,V.uGlobal.uJD!EARNINGS_CODE,"02",V.Local.sreturn)
+	F.Intrinsic.Control.If(V.Local.sreturn.Trim,=,"")
+	F.Intrinsic.Control.Else
+	'split the return for ordinals
+	F.Intrinsic.String.Split(V.Local.sreturn,"*!*",V.Local.sreturn)
+		'loop through the ordinals
+		F.Intrinsic.Control.For(V.Local.inewloop,V.Local.sreturn.LBound,V.Local.sreturn.UBound,1)
+			'set the ordinal
+			V.Local.iord.Set(V.Local.sreturn(v.Local.inewloop))
+			'if sjbhours is blank set it as the hours worked otherwise combine them
+			F.Intrinsic.Control.If(V.Local.sjbhours.Trim,=,"")
+				V.Local.sjbhours.Set(V.uGlobal.uJD(v.Local.iord)!HOURS_WORKED)
+			F.Intrinsic.Control.Else
+				'convert to a float to add
+				F.Intrinsic.Math.ConvertToFloat(V.Local.sjbhours,V.Local.fjbhours)
+				'add the hours
+				F.Intrinsic.math.Add(V.Local.fjbhours,V.uGlobal.uJD(v.Local.iord)!HOURS_WORKED,V.Local.sjbhours)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.inewloop)
+		'seth the paycode and subtract from the total hours
+		V.Local.spaycode.set("EC2")
+		'convert to a float to subtract
+		F.Intrinsic.Math.ConvertToFloat(V.Local.sjbhours,V.Local.sjbhours)
+		F.Intrinsic.Math.Sub(V.global.fHoursCount,V.local.sjbhours,V.global.fHoursCount)
+		'add the hours
+		V.Local.sjbhours.Set(V.Local.sjbhours)
+		F.Intrinsic.String.Format(V.Local.sjbhours,"000000.00",V.Local.sjbhours)
+		'put the paycode in the line
+		F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{2},{2},{2},{2},{6}",V.Local.sfileline,"EC2","",V.local.sjbhours,"","","0",V.Local.sfileline)
+			'see if the final file has been started if so start a new line
+			F.Intrinsic.Control.if(V.local.sfilefinal,<>,"")
+				F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.sfileline,V.Local.sfilefinal)
+				'check to see if the copy is blank
+				F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+					'add the copy as a line to sfileline
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				V.Local.sfilefinal.Set(V.Local.sfileline)
+				'check to see if the copy is blank
+				F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+					'add the copy as a line to sfileline
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		V.Local.sfileline.Set("")
+		V.Local.sjbhours.Set("")
+		V.Local.fjbhours.Set(0)
+	F.Intrinsic.Control.EndIf
+	
+'check to see if the earnings code is 03
+	F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uJD!EMPL,V.uglobal.uJD(v.Local.i2)!EMPL,V.uGlobal.uJD!EARNINGS_CODE,"03",V.Local.sreturn)
+	F.Intrinsic.Control.If(V.Local.sreturn.Trim,=,"")
+
+	F.Intrinsic.Control.Else
+		'split the return for ordinals
+		F.Intrinsic.String.Split(V.Local.sreturn,"*!*",V.Local.sreturn)
+		'loop through the ordinals
+		F.Intrinsic.Control.For(V.Local.inewloop,V.Local.sreturn.LBound,V.Local.sreturn.UBound,1)
+			'set the ordinal
+			V.Local.iord.Set(V.Local.sreturn(v.Local.inewloop))
+			'if sjbhours is blank set it as the hours worked otherwise combine them
+			F.Intrinsic.Control.If(V.Local.sjbhours.Trim,=,"")
+				V.Local.sjbhours.Set(V.uGlobal.uJD(v.Local.iord)!HOURS_WORKED)
+			F.Intrinsic.Control.Else
+				'convert to a float to add
+				F.Intrinsic.Math.ConvertToFloat(V.Local.sjbhours,V.Local.fjbhours)
+				'add the hours
+				F.Intrinsic.math.Add(V.Local.fjbhours,V.uGlobal.uJD(v.Local.iord)!HOURS_WORKED,V.Local.sjbhours)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.inewloop)
+		'seth the paycode and subtract from the total hours
+		V.Local.spaycode.set("EC3")
+		'convert to a float to subtract
+		F.Intrinsic.Math.ConvertToFloat(V.Local.sjbhours,V.Local.sjbhours)
+		F.Intrinsic.Math.Sub(V.global.fHoursCount,V.local.sjbhours,V.global.fHoursCount)
+		'add the hours
+		V.Local.sjbhours.Set(V.local.sjbhours)
+		F.Intrinsic.String.Format(V.Local.sjbhours,"000000.00",V.Local.sjbhours)
+		'put the paycode in the line
+		F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{2},{2},{2},{2},{6}",V.Local.sfileline,"EC3","",V.local.sjbhours,"","","0",V.Local.sfileline)
+			'see if the final file has been started if so start a new line
+			F.Intrinsic.Control.if(V.local.sfilefinal,<>,"")
+				F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.sfileline,V.Local.sfilefinal)
+				'check to see if the copy is blank
+				F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+					'add the copy as a line to sfileline
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				V.Local.sfilefinal.Set(V.Local.sfileline)
+				'check to see if the copy is blank
+				F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+					'add the copy as a line to sfileline
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		V.Local.sfileline.Set("")
+		V.Local.sjbhours.Set("")
+		V.Local.fjbhours.Set(0)
+	F.Intrinsic.Control.EndIf
+
+	'check to see if the earnings code is 04
+	F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uJD!EMPL,V.uglobal.uJD(v.Local.i2)!EMPL,V.uGlobal.uJD!EARNINGS_CODE,"04",V.Local.sreturn)
+	F.Intrinsic.Control.If(V.Local.sreturn.Trim,=,"")
+	F.Intrinsic.Control.Else
+		'split the return for ordinals
+		F.Intrinsic.String.Split(V.Local.sreturn,"*!*",V.Local.sreturn)
+		'loop through the ordinals
+		F.Intrinsic.Control.For(V.Local.inewloop,V.Local.sreturn.LBound,V.Local.sreturn.UBound,1)
+			'set the ordinal
+			V.Local.iord.Set(V.Local.sreturn(v.Local.inewloop))
+			'if sjbhours is blank set it as the hours worked otherwise combine them
+			F.Intrinsic.Control.If(V.Local.sjbhours.Trim,=,"")
+				V.Local.sjbhours.Set(V.uGlobal.uJD(v.Local.iord)!HOURS_WORKED)
+			F.Intrinsic.Control.Else
+				'convert to a float to add
+				F.Intrinsic.Math.ConvertToFloat(V.Local.sjbhours,V.Local.fjbhours)
+				'add the hours
+				F.Intrinsic.math.Add(V.Local.fjbhours,V.uGlobal.uJD(v.Local.iord)!HOURS_WORKED,V.Local.sjbhours)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.inewloop)
+		'seth the paycode and subtract from the total hours
+		V.Local.spaycode.set("EC4")
+		'convert to a float to subtract
+		F.Intrinsic.Math.ConvertToFloat(V.Local.sjbhours,V.Local.sjbhours)
+		F.Intrinsic.Math.Sub(V.global.fHoursCount,V.local.sjbhours,V.global.fHoursCount)
+		'add the hours
+		V.Local.sjbhours.Set(V.Local.sjbhours)
+		F.Intrinsic.String.Format(V.Local.sjbhours,"000000.00",V.Local.sjbhours)
+		'put the paycode in the line
+		F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{2},{2},{2},{2},{6}",V.Local.sfileline,"EC4","",V.local.sjbhours,"","","0",V.Local.sfileline)
+			'see if the final file has been started if so start a new line
+			F.Intrinsic.Control.if(V.local.sfilefinal,<>,"")
+				F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.sfileline,V.Local.sfilefinal)
+				'check to see if the copy is blank
+				F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+					'add the copy as a line to sfileline
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				V.Local.sfilefinal.Set(V.Local.sfileline)
+				'check to see if the copy is blank
+				F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+					'add the copy as a line to sfileline
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		V.Local.sfileline.Set("")
+		V.Local.sjbhours.Set("")
+		V.Local.fjbhours.Set(0)
+	F.Intrinsic.Control.EndIf
+
+'check to see if the earnings code is 05
+	F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uJD!EMPL,V.uglobal.uJD(v.Local.i2)!EMPL,V.uGlobal.uJD!EARNINGS_CODE,"05",V.Local.sreturn)
+	F.Intrinsic.Control.If(V.Local.sreturn.Trim,=,"")
+
+	F.Intrinsic.Control.Else
+		'split the return for ordinals
+		F.Intrinsic.String.Split(V.Local.sreturn,"*!*",V.Local.sreturn)
+		'loop through the ordinals
+		F.Intrinsic.Control.For(V.Local.inewloop,V.Local.sreturn.LBound,V.Local.sreturn.UBound,1)
+			'set the ordinal
+			V.Local.iord.Set(V.Local.sreturn(v.Local.inewloop))
+			'if sjbhours is blank set it as the hours worked otherwise combine them
+			F.Intrinsic.Control.If(V.Local.sjbhours.Trim,=,"")
+				V.Local.sjbhours.Set(V.uGlobal.uJD(v.Local.iord)!HOURS_WORKED)
+			F.Intrinsic.Control.Else
+				'convert to a float to add
+				F.Intrinsic.Math.ConvertToFloat(V.Local.sjbhours,V.Local.fjbhours)
+				'add the hours
+				F.Intrinsic.math.Add(V.Local.fjbhours,V.uGlobal.uJD(v.Local.iord)!HOURS_WORKED,V.Local.sjbhours)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.inewloop)
+		'seth the paycode and subtract from the total hours
+		V.Local.spaycode.set("EC5")
+		'convert to a float to subtract
+		F.Intrinsic.Math.ConvertToFloat(V.Local.sjbhours,V.Local.sjbhours)
+		F.Intrinsic.Math.Sub(V.global.fHoursCount,V.Local.sjbhours,V.global.fHoursCount)
+		'add the hours
+		V.Local.sjbhours.Set(V.Local.sjbhours)
+		F.Intrinsic.String.Format(V.Local.sjbhours,"000000.00",V.Local.sjbhours)
+		'put the paycode in the line
+		F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{2},{2},{2},{2},{6}",V.Local.sfileline,"EC5","",V.local.sjbhours,"","","0",V.Local.sfileline)
+			'see if the final file has been started if so start a new line
+			F.Intrinsic.Control.if(V.local.sfilefinal,<>,"")
+				F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.sfileline,V.Local.sfilefinal)
+				'check to see if the copy is blank
+				F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+					'add the copy as a line to sfileline
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				V.Local.sfilefinal.Set(V.Local.sfileline)
+				'check to see if the copy is blank
+				F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+					'add the copy as a line to sfileline
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		V.Local.sfileline.Set("")
+		V.Local.sjbhours.Set("")
+		V.Local.fjbhours.Set(0)
+	F.Intrinsic.Control.EndIf
+
+	'check to see if the earnings code is 07
+	F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uJD!EMPL,V.uglobal.uJD(v.Local.i2)!EMPL,V.uGlobal.uJD!EARNINGS_CODE,"07",V.Local.sreturn)
+	F.Intrinsic.Control.If(V.Local.sreturn.Trim,=,"")
+	F.Intrinsic.Control.Else
+		'split the return for ordinals
+		F.Intrinsic.String.Split(V.Local.sreturn,"*!*",V.Local.sreturn)
+		'loop through the ordinals
+		F.Intrinsic.Control.For(V.Local.inewloop,V.Local.sreturn.LBound,V.Local.sreturn.UBound,1)
+			'set the ordinal
+			V.Local.iord.Set(V.Local.sreturn(v.Local.inewloop))
+			'if sjbhours is blank set it as the hours worked otherwise combine them
+			F.Intrinsic.Control.If(V.Local.sjbhours.Trim,=,"")
+				V.Local.sjbhours.Set(V.uGlobal.uJD(v.Local.iord)!HOURS_WORKED)
+			F.Intrinsic.Control.Else
+				'convert to a float to add
+				F.Intrinsic.Math.ConvertToFloat(V.Local.sjbhours,V.Local.fjbhours)
+				'add the hours
+				F.Intrinsic.math.Add(V.Local.fjbhours,V.uGlobal.uJD(v.Local.iord)!HOURS_WORKED,V.Local.sjbhours)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.inewloop)
+		'seth the paycode and subtract from the total hours
+		V.Local.spaycode.set("EC7")
+		'convert to a float to subtract
+		F.Intrinsic.Math.ConvertToFloat(V.Local.sjbhours,V.Local.sjbhours)
+		F.Intrinsic.Math.Sub(V.global.fHoursCount,V.Local.sjbhours,V.global.fHoursCount)
+		'add the hours
+		V.Local.sjbhours.Set(V.Local.sjbhours)
+		F.Intrinsic.String.Format(V.Local.sjbhours,"000000.00",V.Local.sjbhours)
+		'put the paycode in the line
+		F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{2},{2},{2},{2},{6}",V.Local.sfileline,"EC7","",V.local.sjbhours,"","","0",V.Local.sfileline)
+			'see if the final file has been started if so start a new line
+			F.Intrinsic.Control.if(V.local.sfilefinal,<>,"")
+				F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.sfileline,V.Local.sfilefinal)
+				'check to see if the copy is blank
+				F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+					'add the copy as a line to sfileline
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				V.Local.sfilefinal.Set(V.Local.sfileline)
+				'check to see if the copy is blank
+				F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+					'add the copy as a line to sfileline
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		V.Local.sfileline.Set("")
+		V.Local.sjbhours.Set("")
+		V.Local.fjbhours.Set(0)
+	F.Intrinsic.Control.EndIf
+
+	'check to see if the earnings code is 08
+	F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uJD!EMPL,V.uglobal.uJD(v.Local.i2)!EMPL,V.uGlobal.uJD!EARNINGS_CODE,"08",V.Local.sreturn)
+	F.Intrinsic.Control.If(V.Local.sreturn.Trim,=,"")
+	F.Intrinsic.Control.Else
+		'split the return for ordinals
+		F.Intrinsic.String.Split(V.Local.sreturn,"*!*",V.Local.sreturn)
+		'loop through the ordinals
+		F.Intrinsic.Control.For(V.Local.inewloop,V.Local.sreturn.LBound,V.Local.sreturn.UBound,1)
+			'set the ordinal
+			V.Local.iord.Set(V.Local.sreturn(v.Local.inewloop))
+			'if sjbhours is blank set it as the hours worked otherwise combine them
+			F.Intrinsic.Control.If(V.Local.sjbhours.Trim,=,"")
+				V.Local.sjbhours.Set(V.uGlobal.uJD(v.Local.iord)!HOURS_WORKED)
+			F.Intrinsic.Control.Else
+				'convert to a float to add
+				F.Intrinsic.Math.ConvertToFloat(V.Local.sjbhours,V.Local.fjbhours)
+				'add the hours
+				F.Intrinsic.math.Add(V.Local.fjbhours,V.uGlobal.uJD(v.Local.iord)!HOURS_WORKED,V.Local.sjbhours)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.inewloop)
+		'seth the paycode and subtract from the total hours
+		V.Local.spaycode.set("EC8")
+		'convert to a float to subtract
+		F.Intrinsic.Math.ConvertToFloat(V.Local.sjbhours,V.Local.sjbhours)
+		F.Intrinsic.Math.Sub(V.global.fHoursCount,V.Local.sjbhours,V.global.fHoursCount)
+		'add the hours
+		V.Local.sjbhours.Set(V.Local.sjbhours)
+		F.Intrinsic.String.Format(V.Local.sjbhours,"000000.00",V.Local.sjbhours)
+		'put the paycode in the line
+		F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{2},{2},{2},{2},{6}",V.Local.sfileline,"EC8","",V.local.sjbhours,"","","0",V.Local.sfileline)
+			'see if the final file has been started if so start a new line
+			F.Intrinsic.Control.if(V.local.sfilefinal,<>,"")
+				F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.sfileline,V.Local.sfilefinal)
+				'check to see if the copy is blank
+				F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+					'add the copy as a line to sfileline
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				V.Local.sfilefinal.Set(V.Local.sfileline)
+				'check to see if the copy is blank
+				F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+					'add the copy as a line to sfileline
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		V.Local.sfileline.Set("")
+		V.Local.sjbhours.Set("")
+		V.Local.fjbhours.Set(0)
+	F.Intrinsic.Control.EndIf
+
+	'check to see if the earnings code is 09
+	F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uJD!EMPL,V.uglobal.uJD(v.Local.i2)!EMPL,V.uGlobal.uJD!EARNINGS_CODE,"09",V.Local.sreturn)
+	F.Intrinsic.Control.If(V.Local.sreturn.Trim,=,"")
+	F.Intrinsic.Control.Else
+		'split the return for ordinals
+		F.Intrinsic.String.Split(V.Local.sreturn,"*!*",V.Local.sreturn)
+		'loop through the ordinals
+		F.Intrinsic.Control.For(V.Local.inewloop,V.Local.sreturn.LBound,V.Local.sreturn.UBound,1)
+			'set the ordinal
+			V.Local.iord.Set(V.Local.sreturn(v.Local.inewloop))
+			'if sjbhours is blank set it as the hours worked otherwise combine them
+			F.Intrinsic.Control.If(V.Local.sjbhours.Trim,=,"")
+				V.Local.sjbhours.Set(V.uGlobal.uJD(v.Local.iord)!HOURS_WORKED)
+			F.Intrinsic.Control.Else
+				'convert to a float to add
+				F.Intrinsic.Math.ConvertToFloat(V.Local.sjbhours,V.Local.fjbhours)
+				'add the hours
+				F.Intrinsic.math.Add(V.Local.fjbhours,V.uGlobal.uJD(v.Local.iord)!HOURS_WORKED,V.Local.sjbhours)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.inewloop)
+		'seth the paycode and subtract from the total hours
+		V.Local.spaycode.set("EC9")
+		'convert to a float to subtract
+		F.Intrinsic.Math.ConvertToFloat(V.Local.sjbhours,V.Local.sjbhours)
+		F.Intrinsic.Math.Sub(V.global.fHoursCount,V.local.sjbhours,V.global.fHoursCount)
+		'add the hours
+		V.Local.sjbhours.Set(V.Local.sjbhours)
+		F.Intrinsic.String.Format(V.Local.sjbhours,"000000.00",V.Local.sjbhours)
+		'put the paycode in the line
+		F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{2},{2},{2},{2},{6}",V.Local.sfileline,"EC9","",V.local.sjbhours,"","","0",V.Local.sfileline)
+			'see if the final file has been started if so start a new line
+			F.Intrinsic.Control.if(V.local.sfilefinal,<>,"")
+				F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.sfileline,V.Local.sfilefinal)
+				'check to see if the copy is blank
+				F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+					'add the copy as a line to sfileline
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				V.Local.sfilefinal.Set(V.Local.sfileline)
+				'check to see if the copy is blank
+				F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+					'add the copy as a line to sfileline
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		V.Local.sfileline.Set("")
+		V.Local.sjbhours.Set("")
+		V.Local.fjbhours.Set(0)
+	F.Intrinsic.Control.EndIf
+
+	'check to see if the earnings code is 10
+	F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uJD!EMPL,V.uglobal.uJD(v.Local.i2)!EMPL,V.uGlobal.uJD!EARNINGS_CODE,"10",V.Local.sreturn)
+	F.Intrinsic.Control.If(V.Local.sreturn.Trim,=,"")
+	F.Intrinsic.Control.Else
+		'split the return for ordinals
+		F.Intrinsic.String.Split(V.Local.sreturn,"*!*",V.Local.sreturn)
+		'loop through the ordinals
+		F.Intrinsic.Control.For(V.Local.inewloop,V.Local.sreturn.LBound,V.Local.sreturn.UBound,1)
+			'set the ordinal
+			V.Local.iord.Set(V.Local.sreturn(v.Local.inewloop))
+			'if sjbhours is blank set it as the hours worked otherwise combine them
+			F.Intrinsic.Control.If(V.Local.sjbhours.Trim,=,"")
+				V.Local.sjbhours.Set(V.uGlobal.uJD(v.Local.iord)!HOURS_WORKED)
+			F.Intrinsic.Control.Else
+				'convert to a float to add
+				F.Intrinsic.Math.ConvertToFloat(V.Local.sjbhours,V.Local.fjbhours)
+				'add the hours
+				F.Intrinsic.math.Add(V.Local.fjbhours,V.uGlobal.uJD(v.Local.iord)!HOURS_WORKED,V.Local.sjbhours)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.inewloop)
+		'seth the paycode and subtract from the total hours
+		V.Local.spaycode.set("EC10")
+			'convert to a float to subtract
+		F.Intrinsic.Math.ConvertToFloat(V.Local.sjbhours,V.Local.sjbhours)
+		F.Intrinsic.Math.Sub(V.global.fHoursCount,V.local.sjbhours,V.global.fHoursCount)
+		'add the hours
+		V.Local.sjbhours.Set(V.Local.sjbhours)
+		F.Intrinsic.String.Format(V.Local.sjbhours,"000000.00",V.Local.sjbhours)
+		'put the paycode in the line
+		F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{2},{2},{2},{2},{6}",V.Local.sfileline,"EC10","",V.local.sjbhours,"","","0",V.Local.sfileline)
+			'see if the final file has been started if so start a new line
+			F.Intrinsic.Control.if(V.local.sfilefinal,<>,"")
+				F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.sfileline,V.Local.sfilefinal)
+				'check to see if the copy is blank
+				F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+					'add the copy as a line to sfileline
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				V.Local.sfilefinal.Set(V.Local.sfileline)
+				'check to see if the copy is blank
+				F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+					'add the copy as a line to sfileline
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		V.Local.sfileline.Set("")
+		V.Local.sjbhours.Set("")
+		V.Local.fjbhours.Set(0)
+	F.Intrinsic.Control.EndIf
+
+
+	'check to see if the earnings code is 01
+	F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uJD!EMPL,V.uglobal.uJD(v.Local.i2)!EMPL,V.uGlobal.uJD!EARNINGS_CODE,"01",V.Local.sreturn)
+	F.Intrinsic.Control.If(V.Local.sreturn.Trim,=,"")
+	F.Intrinsic.Control.Else
+		'check to see if the earnings code is 06
+		F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uJD!EMPL,V.uglobal.uJD(v.Local.i2)!EMPL,V.uGlobal.uJD!EARNINGS_CODE,"06",V.Local.sreturn2)
+		F.Intrinsic.Control.If(V.Local.sreturn2.Trim,=,"")
+
+			'split the return for ordinals
+			F.Intrinsic.String.Split(V.Local.sreturn,"*!*",V.Local.sreturn)
+			'loop through the ordinals
+			F.Intrinsic.Control.For(V.Local.inewloop,V.Local.sreturn.LBound,V.Local.sreturn.UBound,1)
+				'set the ordinal
+				V.Local.iord.Set(V.Local.sreturn(v.Local.inewloop))
+				'if sjbhours is blank set it as the hours worked otherwise combine them
+				F.Intrinsic.Control.If(V.Local.sjbhours.Trim,=,"")
+					V.Local.sjbhours.Set(V.uGlobal.uJD(v.Local.iord)!HOURS_WORKED)
+				F.Intrinsic.Control.Else
+					'convert to a float to add
+					F.Intrinsic.Math.ConvertToFloat(V.Local.sjbhours,V.Local.fjbhours)
+					'add the hours
+					F.Intrinsic.math.Add(V.Local.fjbhours,V.uGlobal.uJD(v.Local.iord)!HOURS_WORKED,V.Local.sjbhours)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Next(V.local.inewloop)
+			F.Intrinsic.Control.If(V.Local.bover40,=,True)
+				'write the line for EC1
+				V.Local.spaycode.set("EC1")
+				F.Intrinsic.Math.Sub(V.Local.fsum,40,V.Local.fdiff2remain)
+				F.Intrinsic.Control.If(V.Global.fHoursCount,<,0)
+					F.Intrinsic.Math.Add(V.Global.fHoursCount,40,V.Local.sjbhours)
+				F.Intrinsic.Control.Else
+					F.Intrinsic.Math.Sub(40,V.Global.fHoursCount,V.Local.sjbhours)
+				F.Intrinsic.Control.EndIf
+'				V.Local.sjbhours.Set(40)
+				F.Intrinsic.String.Format(V.Local.sjbhours,"000000.00",V.Local.sjbhours)
+				V.Local.sdiff2remain.Set(V.local.fdiff2remain)
+				'format
+				F.Intrinsic.String.Format(V.Local.sdiff2remain,"000000.00",V.Local.sdiff2remain)
+				'get the pay rate and differential
+				F.Intrinsic.String.Build("SELECT RATE from V_EMPLOYEE_MSTR where EMPLOYEE = '{0}'",V.uGlobal.uJD(v.Local.iord)!EMPL,V.Local.spayratessql)
+				F.ODBC.Connection!con.OpenRecordsetRO("rstpayrate",V.local.spayratessql)
+				'check to see if eof is false
+				F.Intrinsic.Control.If(V.ODBC.con!rstpayrate.EOF,=,False)
+					V.Local.spayrate.Set(V.ODBC.con!rstpayrate.FieldValTrim!RATE)
+				F.Intrinsic.Control.EndIf
+				F.ODBC.con!rstpayrate.Close
+				'put the paycode in the line
+				F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{2},{2},{2},{2},{6}",V.Local.stempline,"EC1","",V.local.sjbhours,"",V.Local.fpayrate,"0",V.Local.sfileline)
+				'multiply by 1.5
+				F.Intrinsic.Math.Mult(V.Local.fpayrate,1.5,V.Local.fmultrate)
+				'put the OT paycode in the copy line
+				F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{2},{2},{2},{2},{6}",V.Local.stempline,"EC11","",V.Local.sdiff2remain,"",V.Local.fmultrate,"0",V.Local.scopyline)
+				'see if the final file has been started if so start a new line
+				F.Intrinsic.Control.if(V.local.sfilefinal,<>,"")
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.sfileline,V.Local.sfilefinal)
+					'check to see if the copy is blank
+					F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+						'add the copy as a line to sfileline
+						F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.Else
+					V.Local.sfilefinal.Set(V.Local.sfileline)
+					'check to see if the copy is blank
+					F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+						'add the copy as a line to sfileline
+						F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.EndIf
+				V.Local.sfileline.Set("")
+					V.Local.sfileline.Set("")
+				V.Local.semp.Set(V.uglobal.uJD(v.Local.i2)!EMPL)
+				V.Local.bover40.Set(False)
+				V.Local.fsum.Set(0)
+				V.Local.scopyline.set("")
+				V.Local.sss.Set("")
+				V.Local.sdept.Set("")
+				V.Local.spaycode.Set("")
+				V.Local.spayrate.Set("")
+				V.Local.sjbhours.Set("")
+				V.Local.sothours.Set("")
+				V.Local.fmultrate.Set(0)
+				V.Local.fdiff.Set(0)
+				V.Local.fpayrate.Set(0)
+				V.Local.bover40.Set(False)
+				V.Global.fHoursCount.Set(0)
+				V.Local.sdiff2.Set("")
+				V.Local.fsum.Set(0)
+		
+			F.Intrinsic.Control.Else
+				'add the hours
+				V.Local.spaycode.Set("EC1")
+	'			'convert to a float to subtract
+				F.Intrinsic.Math.ConvertToFloat(V.Local.sjbhours,V.Local.sjbhours)
+				'subtractfrom global hours
+				F.Intrinsic.math.Sub(V.Global.fHoursCount,V.Local.sjbhours,V.Global.fHoursCount)
+				F.Intrinsic.String.Format(V.Local.sjbhours,"000000.00",V.Local.sjbhours)
+				'put the paycode in the line
+				F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{2},{2},{2},{2},{6}",V.Local.stempline,V.Local.spaycode,"",V.local.sjbhours,"",V.Local.fpayrate,"0",V.Local.sfileline)
+					'see if the final file has been started if so start a new line
+					F.Intrinsic.Control.if(V.local.sfilefinal,<>,"")
+						F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.sfileline,V.Local.sfilefinal)
+						'check to see if the copy is blank
+						F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+							'add the copy as a line to sfileline
+							F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+						F.Intrinsic.Control.EndIf
+					F.Intrinsic.Control.Else
+						V.Local.sfilefinal.Set(V.Local.sfileline)
+						'check to see if the copy is blank
+						F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+							'add the copy as a line to sfileline
+							F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+						F.Intrinsic.Control.EndIf
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.EndIf
+				V.Local.sfileline.Set("")
+				V.Local.semp.Set(V.uglobal.uJD(v.Local.i2)!EMPL)
+				V.Local.bover40.Set(False)
+				V.Local.fsum.Set(0)
+				V.Local.scopyline.set("")
+				V.Local.sss.Set("")
+				V.Local.sdept.Set("")
+				V.Local.spaycode.Set("")
+				V.Local.spayrate.Set("")
+				V.Local.sjbhours.Set("")
+				V.Local.sothours.Set("")
+				V.Local.fmultrate.Set(0)
+				V.Local.fdiff.Set(0)
+				V.Local.fpayrate.Set(0)
+				V.Local.bover40.Set(False)
+				V.Global.fHoursCount.Set(0)
+				V.Local.sdiff2.Set("")
+				V.Local.fsum.Set(0)
+				V.Local.semp.Set(V.uglobal.uJD(v.Local.i2)!EMPL)
+				V.Local.ii.Set(V.uGlobal.uJD.UBound)
+				F.Intrinsic.Control.If(V.Local.semp,=,V.uglobal.ujd(v.local.ii)!EMPL)
+					F.Intrinsic.String.Build("{0}{1}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.sfilefinal)
+					'make the file a .csv
+					F.Intrinsic.String.Build("{0}{1}",V.Local.sfilename,".csv",V.Local.sfilename)
+					F.Intrinsic.File.Exists(V.Local.sfilename,V.Local.bfileexists)
+					F.Intrinsic.Control.If(V.local.bfileexists,=,False)
+						F.Intrinsic.file.String2File(V.Local.sfilename,V.Local.sfilefinal)
+					F.Intrinsic.Control.Else
+						F.Intrinsic.File.DeleteFile(V.Local.sfilename)
+						F.Intrinsic.file.String2File(V.Local.sfilename,V.Local.sfilefinal)
+					F.Intrinsic.Control.EndIf
+					F.Intrinsic.ui.CloseWaitDialog
+					F.Intrinsic.UI.Msgbox("Payroll Export Complete.")
+					'call the unload subroutine
+					F.intrinsic.Control.CallSub(Form1_unload)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Next(V.local.i2)
+
+		F.Intrinsic.Control.Else
+
+
+
+
+'			'if there is an EC6 and EC1 see which one was processed last
+			F.Intrinsic.String.Split(V.Local.sreturn,"*!*",V.Local.sreturn)
+			F.Intrinsic.String.Split(V.Local.sreturn2,"*!*",V.Local.sreturn2)
+			'build the ubound for the compare udt
+			V.Local.icompareubound.Set(V.local.sreturn.UBound)
+'			F.Intrinsic.Control.If(V.Local.icompareubound,=,0)
+'				V.Local.icompareubound.Set(1)
+''			f.Intrinsic.Control.ElseIf(
+'			F.Intrinsic.Control.EndIf
+			V.Local.icompareubound2.Set(V.local.sreturn2.ubound)
+'			F.Intrinsic.Control.If(V.local.sreturn2.UBound,=,0)
+'				V.Local.icompareubound2.Set(1)
+'			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Math.Add(V.Local.icompareubound,V.Local.icompareubound2,V.Local.icompareuboundfinal)
+		F.Intrinsic.Math.Add(V.Local.icompareuboundfinal,2,V.Local.icompareuboundfinal)
+			V.uGlobal.uCompare.Redim(0,V.Local.icompareuboundfinal)
+			'loop through each and write to the compare udt
+			F.Intrinsic.Control.For(V.local.ireturn,0,V.Local.sreturn.UBound,1)
+				V.uGlobal.uCompare(v.Local.ireturn)!CHARGE_DATE.Set(V.uGlobal.uJD(v.Local.sreturn(v.Local.ireturn))!CHARGE_DATE)
+				V.uGlobal.uCompare(v.Local.ireturn)!EARNINGS_CODE.Set(V.uGlobal.uJD(v.Local.sreturn(v.Local.ireturn))!EARNINGS_CODE)
+				V.uGlobal.uCompare(v.Local.ireturn)!HOURS_WORKED.Set(V.uGlobal.uJD(v.Local.sreturn(v.Local.ireturn))!HOURS_WORKED)
+			F.Intrinsic.Control.Next(V.local.ireturn)
+				V.Local.iord2.Set(V.Local.ireturn)
+	F.Intrinsic.Math.Add(V.local.iord2,1,V.Local.iord2)
+			F.Intrinsic.Control.For(V.local.ireturn2,0,V.Local.sreturn2.UBound,1)
+'				F.intrinsic.control.if(v.Local.ireturn2,=,v.Local.sreturn2.UBound)
+'
+'				F.Intrinsic.Control.endif
+				V.uGlobal.uCompare(v.Local.iord2)!CHARGE_DATE.Set(V.uGlobal.uJD(v.Local.sreturn2(v.Local.ireturn2))!CHARGE_DATE)
+				V.uGlobal.uCompare(v.Local.iord2)!EARNINGS_CODE.Set(V.uGlobal.uJD(v.Local.sreturn2(v.Local.ireturn2))!EARNINGS_CODE)
+				V.uGlobal.uCompare(v.Local.iord2)!HOURS_WORKED.Set(V.uGlobal.uJD(v.Local.sreturn2(v.Local.ireturn2))!HOURS_WORKED)
+'				F.intrinsic.control.if(V.Local.ireturn2,<,V.Local.sreturn2.UBound)
+					F.Intrinsic.Math.Add(V.Local.iord2,1,V.Local.iord2)
+''				F.Intrinsic.Control.endif
+'				F.Intrinsic.Math.Add(V.Local.iord2,1,V.Local.iord2)
+			F.Intrinsic.Control.Next(V.local.ireturn2)
+			'sort the UDT by date
+			F.Intrinsic.Variable.UDTMultiQuickSort(V.uglobal.uCompare!CHARGE_DATE,False,V.uGlobal.uCOMPARE!CHARGE_DATE,False)
+
+			V.Local.icompareubound.Set(0)
+			V.Local.icompareubound2.set(0)
+
+			'loop through the compare table and write the records
+			F.Intrinsic.Control.For(V.Local.ireturn,V.uGlobal.uCompare.LBound,V.uGlobal.uCompare.UBound,1)
+				F.Intrinsic.Control.If(V.uGlobal.uCompare(v.Local.ireturn)!EARNINGS_CODE,=,"06")
+					'fdiff2 = EC1 fdiff = EC 6
+					F.Intrinsic.Control.If(V.Local.fdiff,=,0)
+						V.Local.fdiff.Set(V.uGlobal.uCompare(v.Local.ireturn)!HOURS_WORKED)
+					F.Intrinsic.Control.Else
+						F.Intrinsic.Math.Add(V.Local.fdiff,V.uGlobal.uCompare(v.Local.ireturn)!HOURS_WORKED,V.Local.fdiff)
+						F.Intrinsic.Control.If(V.Local.fdiff,>,40)
+							F.intrinsic.math.sub(V.Local.fdiff,40,V.Local.fdiffover40)
+						F.Intrinsic.Control.EndIf
+
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.ElseIf(V.uGlobal.uCompare(v.Local.ireturn)!EARNINGS_CODE,=,"01")
+					'fdiff2 = EC1 fdiff = EC 6
+					F.Intrinsic.Control.If(V.Local.fdiff2,=,0)
+						V.Local.fdiff2.Set(V.uGlobal.uCompare(v.Local.ireturn)!HOURS_WORKED)
+					F.Intrinsic.Control.Else
+						F.Intrinsic.Math.Add(V.Local.fdiff2,V.uGlobal.uCompare(v.Local.ireturn)!HOURS_WORKED,V.Local.fdiff2)
+						F.Intrinsic.Control.If(V.Local.fdiff2,>,40)
+							F.intrinsic.math.sub(V.Local.fdiff2,40,V.Local.fdiff2over40)
+						F.Intrinsic.Control.EndIf
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Next(V.Local.ireturn)
+
+V.Local.bboth.Set(True)
+
+			'check to see if they have surpassed 40 hours
+			F.Intrinsic.Control.If(V.Local.fdiff,>,40)
+				F.Intrinsic.Math.Sub(V.Local.fdiff,40,V.Local.fdiffremain)
+'				'write EC6 records first
+				V.Local.spaycode.set("EC6")
+				'get the pay rate and differential
+				F.Intrinsic.String.Build("SELECT AMT_6 from PYRL_EARN_CODE where EMPL = '{0}'",V.uGlobal.uJD(v.Local.iord)!EMPL,V.Local.spayratessql)
+				F.ODBC.Connection!con.OpenRecordsetRO("rstpayrate",V.local.spayratessql)
+				'check to see if eof is false
+				F.Intrinsic.Control.If(V.ODBC.con!rstpayrate.EOF,=,False)
+					V.Local.fpayrate.Set(V.ODBC.con!rstpayrate.FieldValfloat!AMT_6)
+				F.Intrinsic.Control.EndIf
+				F.ODBC.con!rstpayrate.Close
+				V.Local.sdiffremain.Set(V.Local.fdiffremain)
+				'format
+				F.Intrinsic.String.Format(V.Local.sdiffremain,"000000.00",V.Local.sdiffremain)
+'				V.Local.sjbhours.Set(V.Global.fHoursCount)
+				V.Local.sjbhours.Set(40)
+				'format
+				F.Intrinsic.String.Format(V.Local.sjbhours,"000000.00",V.Local.sjbhours)
+				'put the paycode in the line
+				F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{2},{2},{2},{2},{6}",V.Local.stempline,"EC6","",V.local.sjbhours,"",V.Local.fpayrate,"0",V.Local.sfileline)
+				'multiply by 1.5
+				F.Intrinsic.Math.Mult(V.Local.fpayrate,1.5,V.Local.fmultrate)
+				'put the OT paycode in the copy line
+				F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{2},{2},{2},{2},{6}",V.Local.stempline,"EC12","",V.Local.sdiffremain,"",V.Local.fmultrate,"0",V.Local.scopyline)
+				'see if the final file has been started if so start a new line
+				F.Intrinsic.Control.if(V.local.sfilefinal,<>,"")
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.sfileline,V.Local.sfilefinal)
+					'check to see if the copy is blank
+					F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+						'add the copy as a line to sfileline
+						F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.Else
+					V.Local.sfilefinal.Set(V.Local.sfileline)
+					'check to see if the copy is blank
+					F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+						'add the copy as a line to sfileline
+						F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				F.Intrinsic.Control.If(V.local.fdiff,<>,0)
+					V.Local.spaycode.set("EC6")
+					'get the pay rate and differential
+					F.Intrinsic.String.Build("SELECT AMT_6 from PYRL_EARN_CODE where EMPL = '{0}'",V.uGlobal.uJD(v.Local.iord)!EMPL,V.Local.spayratessql)
+					F.ODBC.Connection!con.OpenRecordsetRO("rstpayrate",V.local.spayratessql)
+					'check to see if eof is false
+					F.Intrinsic.Control.If(V.ODBC.con!rstpayrate.EOF,=,False)
+						V.Local.fpayrate.Set(V.ODBC.con!rstpayrate.FieldValfloat!AMT_6)
+					F.Intrinsic.Control.EndIf
+					F.ODBC.con!rstpayrate.Close
+					'add the hours
+					V.Local.sjbhours.Set(V.Local.fdiff)
+					'convert to a float to subtract
+					F.Intrinsic.Math.ConvertToFloat(V.Local.sjbhours,V.Local.sjbhours)
+					'subtractfrom global hours
+					F.Intrinsic.math.Sub(V.Global.fHoursCount,V.Local.sjbhours,V.Global.fHoursCount)
+					F.Intrinsic.String.Format(V.Local.sjbhours,"000000.00",V.Local.sjbhours)
+					'put the paycode in the line
+					F.Intrinsic.Control.If(V.Local.fdiff2,<,40)
+						F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{2},{2},{2},{2},{6}",V.Local.stempline,V.Local.spaycode,"",V.local.sjbhours,"",V.Local.fpayrate,"0",V.Local.sfileline)
+						'see if the final file has been started if so start a new line
+						F.Intrinsic.Control.if(V.local.sfilefinal,<>,"")
+							F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.sfileline,V.Local.sfilefinal)
+							'check to see if the copy is blank
+							F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+								'add the copy as a line to sfileline
+								F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+							F.Intrinsic.Control.EndIf
+						F.Intrinsic.Control.Else
+							V.Local.sfilefinal.Set(V.Local.sfileline)
+							'check to see if the copy is blank
+							F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+								'add the copy as a line to sfileline
+								F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+							F.Intrinsic.Control.EndIf
+						F.Intrinsic.Control.EndIf
+					F.Intrinsic.Control.Else
+						F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{2},{2},{2},{2},{6}",V.Local.stempline,"EC6","",V.local.sjbhours,"",V.Local.fpayrate,"0",V.Local.sfileline)
+						'see if the final file has been started if so start a new line
+						F.Intrinsic.Control.if(V.local.sfilefinal,<>,"")
+							F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.sfileline,V.Local.sfilefinal)
+						F.Intrinsic.Control.EndIf
+						V.Local.sfileline.Set("")
+
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.EndIf
+
+			'check to see if they have surpassed 40 hours
+			F.Intrinsic.Control.If(V.Local.fdiff2,>,40)
+'				F.Intrinsic.Math.Sub(V.Local.fdiff2,40,V.Local.fdiff2remain)
+
+				'write the line for EC1
+				V.Local.spaycode.set("EC1")
+'				F.Intrinsic.Math.Sub(40,V.Local.fdiff,V.Local.sdiff2)
+
+				F.Intrinsic.Math.Sub(40,V.Local.fdiff,V.Local.fdiff2remain)
+				F.Intrinsic.Math.Sub(40,V.Local.fdiff,V.local.sjbhours)
+'				v.Local.sdiff2
+				F.Intrinsic.Math.Sub(V.Local.fdiff2,V.Local.fdiff2remain,V.Local.fdiff2remain)
+'				V.Local.sdiff2.Set(40)
+'				V.Local.sdiff2.Set(V.global.fHoursCount)
+				V.Local.sdiff2remain.Set(V.local.fdiff2remain)
+				F.Intrinsic.String.Format(V.Local.sjbhours,"000000.00",V.Local.sjbhours)
+				'format
+				F.Intrinsic.String.Format(V.Local.sdiff2remain,"000000.00",V.Local.sdiff2remain)
+				'get the pay rate and differential
+				F.Intrinsic.String.Build("SELECT RATE from V_EMPLOYEE_MSTR where EMPLOYEE = '{0}'",V.uGlobal.uJD(v.Local.iord)!EMPL,V.Local.spayratessql)
+				F.ODBC.Connection!con.OpenRecordsetRO("rstpayrate",V.local.spayratessql)
+				'check to see if eof is false
+				F.Intrinsic.Control.If(V.ODBC.con!rstpayrate.EOF,=,False)
+					V.Local.spayrate.Set(V.ODBC.con!rstpayrate.FieldValTrim!RATE)
+				F.Intrinsic.Control.EndIf
+				F.ODBC.con!rstpayrate.Close
+				F.Intrinsic.Control.If(V.Local.sjbhours,>,0)
+					'put the paycode in the line
+					F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{2},{2},{2},{2},{6}",V.Local.stempline,"EC1","",V.local.sjbhours,"",V.Local.fpayrate,"0",V.Local.sfileline)
+				F.Intrinsic.Control.endif
+				'multiply by 1.5
+				F.Intrinsic.Math.Mult(V.Local.fpayrate,1.5,V.Local.fmultrate)
+				'put the OT paycode in the copy line
+				F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{2},{2},{2},{2},{6}",V.Local.stempline,"EC11","",V.Local.sdiff2remain,"",V.Local.fmultrate,"0",V.Local.scopyline)
+				'see if the final file has been started if so start a new line
+				F.Intrinsic.Control.if(V.local.sfilefinal,<>,"")
+'				F.Intrinsic.Control.AndIf(V.Local.sjbhours,>,0)
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.sfileline,V.Local.sfilefinal)
+					'check to see if the copy is blank
+					F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+						'add the copy as a line to sfileline
+						F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.Else
+					V.Local.sfilefinal.Set(V.Local.sfileline)
+					'check to see if the copy is blank
+					F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+						'add the copy as a line to sfileline
+						F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.EndIf
+				V.Local.sfileline.Set("")
+			F.Intrinsic.Control.Else
+				F.Intrinsic.Control.If(V.Local.fdiff2,<>,0)
+			'add the hours
+			V.Local.spaycode.Set("EC1")
+			V.Local.sjbhours.Set(V.Local.fdiff2)
+			F.Intrinsic.String.Format(V.Local.sjbhours,"000000.00",V.Local.sjbhours)
+			F.Intrinsic.Control.If(V.Local.fdiff,>,40)
+				F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{2},{2},{2},{2},{6}",V.Local.stempline,"EC11","",V.local.sjbhours,"",V.Local.fpayrate,"0",V.Local.sfileline)
+				F.Intrinsic.Control.if(V.local.sfilefinal,<>,"")
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.sfileline,V.Local.sfilefinal)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+
+				'put the paycode in the line
+				F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{2},{2},{2},{2},{6}",V.Local.stempline,V.Local.spaycode,"",V.local.sjbhours,"",V.Local.fpayrate,"0",V.Local.sfileline)
+				'see if the final file has been started if so start a new line
+				F.Intrinsic.Control.if(V.local.sfilefinal,<>,"")
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.sfileline,V.Local.sfilefinal)
+					'check to see if the copy is blank
+					F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+							'add the copy as a line to sfileline
+							F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+						F.Intrinsic.Control.EndIf
+					F.Intrinsic.Control.Else
+						V.Local.sfilefinal.Set(V.Local.sfileline)
+						'check to see if the copy is blank
+						F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+							'add the copy as a line to sfileline
+							F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+						F.Intrinsic.Control.EndIf
+					F.Intrinsic.Control.EndIf
+					V.Local.sfileline.Set("")
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.EndIf
+			V.Local.sfileline.Set("")
+			V.Local.semp.Set(V.uglobal.uJD(v.Local.i2)!EMPL)
+			V.Local.bover40.Set(False)
+			V.Local.fsum.Set(0)
+			V.Local.scopyline.set("")
+			V.Local.sss.Set("")
+			V.Local.sdept.Set("")
+			V.Local.spaycode.Set("")
+			V.Local.spayrate.Set("")
+			V.Local.sjbhours.Set("")
+			V.Local.sothours.Set("")
+			V.Local.fmultrate.Set(0)
+			V.Local.fdiff.Set(0)
+			V.Local.fpayrate.Set(0)
+			V.Local.bover40.Set(False)
+			V.Global.fHoursCount.Set(0)
+			V.Local.sdiff2.Set("")
+			V.Local.fsum.Set(0)
+			V.Local.semp.Set(V.uglobal.uJD(v.Local.i2)!EMPL)
+			V.Local.ii.Set(V.uGlobal.uJD.UBound)
+			F.Intrinsic.Control.If(V.Local.semp,=,V.uglobal.ujd(v.local.ii)!EMPL)
+				F.Intrinsic.String.Build("{0}{1}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.sfilefinal)
+				'make the file a .csv
+				F.Intrinsic.String.Build("{0}{1}",V.Local.sfilename,".csv",V.Local.sfilename)
+				F.Intrinsic.File.Exists(V.Local.sfilename,V.Local.bfileexists)
+				F.Intrinsic.Control.If(V.local.bfileexists,=,False)
+					F.Intrinsic.file.String2File(V.Local.sfilename,V.Local.sfilefinal)
+				F.Intrinsic.Control.Else
+					F.Intrinsic.File.DeleteFile(V.Local.sfilename)
+					F.Intrinsic.file.String2File(V.Local.sfilename,V.Local.sfilefinal)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.ui.CloseWaitDialog
+				F.Intrinsic.UI.Msgbox("Payroll Export Complete.")
+				'call the unload subroutine
+				F.intrinsic.Control.CallSub(Form1_unload)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Next(V.local.i2)
+			V.Local.sjbhours.Set("")
+			V.Local.fjbhours.Set(0)
+			V.Local.sfileline.Set("")
+		F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+'F.Intrinsic.Control.Next(V.Local.i2)
+
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Local.bboth,=,True)
+
+	'reset the variable
+	V.Local.bover40.Set(False)
+	V.Local.fsum.Set(0)
+	V.Local.scopyline.set("")
+	V.Local.sss.Set("")
+	V.Local.sdept.Set("")
+	V.Local.spaycode.Set("")
+	V.Local.spayrate.Set("")
+	V.Local.sjbhours.Set("")
+	V.Local.sothours.Set("")
+	V.Local.fmultrate.Set(0)
+	V.Local.fdiff.Set(0)
+	V.Local.fpayrate.Set(0)
+	V.Local.bover40.Set(False)
+	V.Global.fHoursCount.Set(0)
+	V.Local.sdiff2.Set("")
+	V.Local.semp.Set(V.uglobal.uJD(v.Local.i2)!EMPL)
+	V.Local.ii.Set(V.uGlobal.uJD.UBound)
+	V.Local.bboth.set(False)
+	F.Intrinsic.Control.Next(V.local.i2)
+F.Intrinsic.Control.endif
+
+		'check to see if the earnings code is 06
+		F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uJD!EMPL,V.uglobal.uJD(v.Local.i2)!EMPL,V.uGlobal.uJD!EARNINGS_CODE,"06",V.Local.sreturn)
+	F.Intrinsic.Control.If(V.Local.sreturn.Trim,=,"")
+	F.Intrinsic.Control.Else
+		V.Local.spaycode.set("EC6")
+		'split the return for ordinals
+		F.Intrinsic.String.Split(V.Local.sreturn,"*!*",V.Local.sreturn)
+		'loop through the ordinals
+		F.Intrinsic.Control.For(V.Local.inewloop,V.Local.sreturn.LBound,V.Local.sreturn.UBound,1)
+			'set the ordinal
+			V.Local.iord.Set(V.Local.sreturn(v.Local.inewloop))
+			'if sjbhours is blank set it as the hours worked otherwise combine them
+			F.Intrinsic.Control.If(V.Local.sjbhours.Trim,=,"")
+				V.Local.sjbhours.Set(V.uGlobal.uJD(v.Local.iord)!HOURS_WORKED)
+			F.Intrinsic.Control.Else
+				'convert to a float to add
+				F.Intrinsic.Math.ConvertToFloat(V.Local.sjbhours,V.Local.fjbhours)
+				'add the hours
+				F.Intrinsic.math.Add(V.Local.fjbhours,V.uGlobal.uJD(v.Local.iord)!HOURS_WORKED,V.Local.sjbhours)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.local.inewloop)
+		F.Intrinsic.Control.if(V.Local.bover40,=,True)
+			F.Intrinsic.Math.Sub(V.Local.fsum,40,V.Local.fdiff2remain)
+
+
+			V.Local.sjbhours.Set(40)
+			F.Intrinsic.String.Format(V.Local.sjbhours,"000000.00",V.Local.sjbhours)
+			V.Local.sdiff2remain.Set(V.local.fdiff2remain)
+			'format
+			F.Intrinsic.String.Format(V.Local.sdiff2remain,"000000.00",V.Local.sdiffremain)
+			'get the pay rate and differential
+			F.Intrinsic.String.Build("SELECT AMT_6 from PYRL_EARN_CODE where EMPL = '{0}'",V.uGlobal.uJD(v.Local.iord)!EMPL,V.Local.spayratessql)
+			F.ODBC.Connection!con.OpenRecordsetRO("rstpayrate",V.local.spayratessql)
+			'check to see if eof is false
+			F.Intrinsic.Control.If(V.ODBC.con!rstpayrate.EOF,=,False)
+				V.Local.fpayrate.Set(V.ODBC.con!rstpayrate.FieldValfloat!AMT_6)
+			F.Intrinsic.Control.EndIf
+			F.ODBC.con!rstpayrate.Close
+			'put the paycode in the line
+			F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{2},{2},{2},{2},{6}",V.Local.stempline,"EC6","",V.local.sjbhours,"",V.Local.fpayrate,"0",V.Local.sfileline)
+			'multiply by 1.5
+			F.Intrinsic.Math.Mult(V.Local.fpayrate,1.5,V.Local.fmultrate)
+			'put the OT paycode in the copy line
+			F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{2},{2},{2},{2},{6}",V.Local.stempline,"EC12","",V.Local.sdiffremain,"",V.Local.fmultrate,"0",V.Local.scopyline)
+			'see if the final file has been started if so start a new line
+			F.Intrinsic.Control.if(V.local.sfilefinal,<>,"")
+				F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.sfileline,V.Local.sfilefinal)
+				'check to see if the copy is blank
+				F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+					'add the copy as a line to sfileline
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				V.Local.sfilefinal.Set(V.Local.sfileline)
+				'check to see if the copy is blank
+				F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+					'add the copy as a line to sfileline
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+			V.Local.sfileline.Set("")
+		F.Intrinsic.Control.Else
+			'get the pay rate and differential
+			F.Intrinsic.String.Build("SELECT AMT_6 from PYRL_EARN_CODE where EMPL = '{0}'",V.uGlobal.uJD(v.Local.iord)!EMPL,V.Local.spayratessql)
+'			F.Intrinsic.String.Build("SELECT RATE, DIFFERENTIAL from V_EMPLOYEE_MSTR where EMPLOYEE = '\\\{0\\\}'",V.uGlobal.uJD(v.Local.i2)!EMPL,V.Local.spayratessql)
+			F.ODBC.Connection!con.OpenRecordsetRO("rstpayrate",V.local.spayratessql)
+			'check to see if eof is false
+			F.Intrinsic.Control.If(V.ODBC.con!rstpayrate.EOF,=,False)
+				V.Local.fpayrate.Set(V.ODBC.con!rstpayrate.FieldValfloat!AMT_6)
+			F.Intrinsic.Control.EndIf
+			F.ODBC.con!rstpayrate.Close
+			'add the hours
+'				'convert to a float to subtract
+			F.Intrinsic.Math.ConvertToFloat(V.Local.sjbhours,V.Local.sjbhours)
+			'subtractfrom global hours
+			F.Intrinsic.math.Sub(V.Global.fHoursCount,V.Local.sjbhours,V.Global.fHoursCount)
+			F.Intrinsic.String.Format(V.Local.sjbhours,"000000.00",V.Local.sjbhours)
+			'put the paycode in the line
+			F.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{2},{2},{2},{2},{6}",V.Local.stempline,V.Local.spaycode,"",V.local.sjbhours,"",V.Local.fpayrate,"0",V.Local.sfileline)
+			'see if the final file has been started if so start a new line
+			F.Intrinsic.Control.if(V.local.sfilefinal,<>,"")
+				F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.sfileline,V.Local.sfilefinal)
+				'check to see if the copy is blank
+				F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+					'add the copy as a line to sfileline
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				V.Local.sfilefinal.Set(V.Local.sfileline)
+				'check to see if the copy is blank
+				F.Intrinsic.Control.If(V.Local.scopyline,<>,"")
+					'add the copy as a line to sfileline
+					F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.scopyline,V.Local.sfilefinal)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+			V.Local.sfileline.Set("")
+		F.Intrinsic.Control.Endif
+	F.Intrinsic.Control.EndIf
+
+	'reset the variable
+	V.Local.bover40.Set(False)
+	V.Local.fsum.Set(0)
+	V.Local.scopyline.set("")
+	V.Local.sss.Set("")
+	V.Local.sdept.Set("")
+	V.Local.spaycode.Set("")
+	V.Local.spayrate.Set("")
+	V.Local.sjbhours.Set("")
+	V.Local.sothours.Set("")
+	V.Local.fmultrate.Set(0)
+	V.Local.fdiff.Set(0)
+	V.Local.fpayrate.Set(0)
+	V.Local.bover40.Set(False)
+	V.Global.fHoursCount.Set(0)
+	V.Local.sdiff2.Set("")
+	V.Local.semp.Set(V.uglobal.uJD(v.Local.i2)!EMPL)
+	V.Local.ii.Set(V.uGlobal.uJD.UBound)
+
+'F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Control.EndIf
+	
+
+	
+	F.Intrinsic.Control.If(V.Local.semp,=,V.uglobal.ujd(v.local.ii)!EMPL)
+		F.Intrinsic.String.Build("{0}{1}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.sfilefinal)
+		'make the file a .csv
+		F.Intrinsic.String.Build("{0}{1}",V.Local.sfilename,".csv",V.Local.sfilename)
+		F.Intrinsic.File.Exists(V.Local.sfilename,V.Local.bfileexists)
+		F.Intrinsic.Control.If(V.local.bfileexists,=,False)
+			F.Intrinsic.file.String2File(V.Local.sfilename,V.Local.sfilefinal)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.File.DeleteFile(V.Local.sfilename)
+			F.Intrinsic.file.String2File(V.Local.sfilename,V.Local.sfilefinal)
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.ui.CloseWaitDialog
+		F.Intrinsic.UI.Msgbox("Payroll Export Complete.")
+		'call the unload subroutine
+		F.intrinsic.Control.CallSub(Form1_unload)
+	F.Intrinsic.control.endif
+F.Intrinsic.Control.Next(V.Local.i2)
+
+F.Intrinsic.String.Build("{0}{1}",V.Local.sfilefinal,V.Ambient.NewLine,V.Local.sfilefinal)
+'make the file a .csv
+F.Intrinsic.String.Build("{0}{1}",V.Local.sfilename,".csv",V.Local.sfilename)
+F.Intrinsic.File.Exists(V.Local.sfilename,V.Local.bfileexists)
+F.Intrinsic.Control.If(V.local.bfileexists,=,False)
+	F.Intrinsic.file.String2File(V.Local.sfilename,V.Local.sfilefinal)
+F.Intrinsic.Control.Else
+	F.Intrinsic.File.DeleteFile(V.Local.sfilename)
+	F.Intrinsic.file.String2File(V.Local.sfilename,V.Local.sfilefinal)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.ui.CloseWaitDialog
+
+F.Intrinsic.UI.Msgbox("Payroll Export Complete.")
+
+'call the unload subroutine
+F.intrinsic.Control.CallSub(Form1_unload)
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdok_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_Compass_HRM_Payroll_7225.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.intrinsic.control.callsub(Form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+
+program.sub.cmdok_click.end
+
+program.sub.cmdbegempbrwse_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdbegempbrwse_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sret.Declare(String)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+
+
+'launch employee browser
+F.Intrinsic.UI.Browser(51,"Select an Employee",V.Local.sret)
+F.Intrinsic.Control.If(V.Local.sret,=,"***CANCEL***")
+	F.Intrinsic.UI.Msgbox("No employee was selected")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sret,"*!*",V.Local.sret)
+	'set the textboxes as the employee selected
+	Gui.Form1.txtBegEmp.Text(V.Local.sret(0))
+	Gui.Form1.txtendemp.Text(V.Local.sret(0))
+
+F.Intrinsic.Control.EndIf
+
+'uncheck the all employees checkbox
+Gui.Form1.chkAllEmp.Value(0)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdbegempbrwse_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_Compass_HRM_Payroll_7225.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmdbegempbrwse_click.end
+
+program.sub.cmdendempbrws_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdendempbrws_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sret.Declare(String)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+
+'launch employee browser
+F.Intrinsic.UI.Browser(51,"Select an Employee",V.Local.sret)
+F.Intrinsic.Control.If(V.Local.sret,=,"***CANCEL***")
+	F.Intrinsic.UI.Msgbox("No employee was selected")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sret,"*!*",V.Local.sret)
+	'set the textboxes as the employee selected
+	Gui.Form1.txtendemp.Text(V.Local.sret(0))
+F.Intrinsic.Control.EndIf
+
+'uncheck the all employees checkbox
+Gui.Form1.chkAllEmp.Value(0)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdendempbrws_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_Compass_HRM_Payroll_7225.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmdendempbrws_click.end
+
+program.sub.chkallemp_click.start
+F.Intrinsic.Control.SetErrorHandler("chkallemp_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'check to see if the checkbox is checked, if so clear the textboxes
+F.Intrinsic.Control.If(V.Screen.Form1!chkAllEmp.Value,=,1)
+	Gui.Form1.txtBegEmp.Text("")
+	Gui.Form1.txtendemp.Text("")
+F.Intrinsic.Control.Else
+	
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("chkallemp_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_Compass_HRM_Payroll_7225.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.chkallemp_click.end
+
+Program.Sub.Comments.Start
+${$0$}$GCG_Compass_HRM_Payroll_7225$}$WAW$}$11/20/2015
+Program.Sub.Comments.End
+
